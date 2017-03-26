@@ -16,4 +16,39 @@ def associativite(table):
                     return False
     return True
 
-print(associativite(table))
+
+def is_morphisme(table1, table2, application):
+    n = range(len(application))
+    for i in n:
+        for j in n:
+            if (application[table1[i][j]] != table2[application[i]][application[j]]):
+                return False
+
+    return True
+
+
+application = [0, 1, 2, 3]
+#print(is_morphisme(table, table, application))
+
+
+def permut(l):
+    if not l:
+        return [[]]
+    res = []
+    for e in l:
+        temp = l[:]
+        temp.remove(e)
+        res.extend([[e] + r for r in permut(temp)])
+
+    return res
+
+
+def get_automorphisme(loi, ensemble):
+    permutations = permut(ensemble)
+    automorphismes = []
+    for e in permutations:
+        if is_morphisme(loi,loi,e):
+            automorphismes.append(e)
+    return automorphismes
+
+print(get_automorphisme(table,ensemble))
