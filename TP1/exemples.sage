@@ -3,6 +3,7 @@ load "neutre.sage"
 load "associativite.sage"
 load "morphisme.sage"
 load "tools.sage"
+load "symetrique.sage"
 
 #Correspond à la table du groupe (Z/4Z, +, 0)
 table = [
@@ -17,21 +18,20 @@ ensemble = [0, 1, 2, 3]
 application = [0, 1, 2, 3]
 
 def main():
-    print("Rappel des éléments à l'entrée :")
+    print("Rappel des trucs au debut :")
     print("Table de la loi", table)
     print("Ensemble", ensemble)
     print("Automorphisme", application)
-    print("Test élément neutre..")
-    print("Résultat : ", element_neutre(table, ensemble))
-    print("Test symétrique de 0..")
-    print("Résultat : ", symetrique(0, table, ensemble))
-    print("Test table symétrique..")
-    print("Résultat : ", table_symetrique(table, ensemble))
-    print("Test associativité")
-    print("Résultat : ", associativite(table))
+    print("Test element neutre..")
+    print("Resultat : ", element_neutre(table, ensemble))
+    print("Test symetrique de 0..")
+    print("Resultat : ", symetrique(0, table, ensemble))
+    print("Test table symetrique..")
+    print("Resultat : ", table_symetrique(table, ensemble))
+    print("Test associativite")
+    print("Resultat : ", associativite(table))
     print("Test automorphisme")
-    print("Résultat", get_automorphisme(application, ensemble))
+    print("Resultat", get_automorphisme(table, ensemble))
 
 if __name__ == '__main__':
     main()
-
