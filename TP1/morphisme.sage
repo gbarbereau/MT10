@@ -10,12 +10,11 @@ def is_morphisme(table1, table2, application):
 
     return True
 
-def get_automorphisme(loi, ensemble):
+def get_automorphisme(table_loi, ensemble):
     """Retourne tous les automorphismes de l'ensemble"""
     permutations = permut(ensemble)
     automorphismes = []
     for e in permutations:
-        if is_morphisme(loi,loi,e):
+        if is_morphisme(table_loi,table_loi,e):
             automorphismes.append(e)
     return automorphismes
-
